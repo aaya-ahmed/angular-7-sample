@@ -1,0 +1,12 @@
+.mat-toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    >div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:1rem
+    }
+}

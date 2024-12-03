@@ -1,0 +1,22 @@
+<ng-container *ngIf="users">
+  <div class="cards-container">
+    <app-vertical-card
+      *ngFor="let user of users.data"
+      [card]="{
+        id: user.id,
+        title: user.first_name,
+        subtitle: user.email,
+        body: '',
+        image: user.avatar
+      }"
+      (click)="goToDetails(user.id)"
+    ></app-vertical-card>
+  </div>
+  <mat-paginator
+    [length]="users?.total"
+    [pageSizeOptions]="[users.per_page]"
+    aria-label="Select page"
+    (page)="getUsers($event.pageIndex + 1)"
+  >
+  </mat-paginator>
+</ng-container>

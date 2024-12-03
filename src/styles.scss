@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+*,html,body{
+    overflow: hidden;
+}
+html{
+    overflow-y: auto;
+
+}
+body{
+    font-family: Roboto, Arial, sans-serif;   
+
+}
+input[matinput]::-webkit-outer-spin-button,
+input[matinput]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[matinput][type=number] {
+  -moz-appearance: textfield;
+}

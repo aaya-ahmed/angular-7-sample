@@ -1,0 +1,10 @@
+.cards-container{
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
+  grid-gap: 2rem;
+  // display: flex;
+  // justify-content: start;
+  // align-items: center;
+  // flex-wrap: wrap;
+}

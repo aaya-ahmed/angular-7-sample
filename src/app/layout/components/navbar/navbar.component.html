@@ -1,0 +1,20 @@
+<nav>
+    <button
+  mat-icon-button
+  class="toggle-button"
+  aria-label="icon-button with menu icon"
+  (click)="toggleView()"
+ 
+>
+<mat-icon aria-hidden="false" aria-label="Menu icon"  svgIcon="menu"></mat-icon>
+</button>
+<mat-nav-list [ngClass]="['list-view',isShowMenu?'list-view-show':'']">
+  <mat-list-item>
+    <a mat-menu-item [routerLink]="'users'">
+      <mat-icon mat-list-icon svgIcon="users" aria-hidden="false" aria-label="Users"></mat-icon>
+      Users
+    </a>
+  </mat-list-item>
+</mat-nav-list>
+
+</nav>

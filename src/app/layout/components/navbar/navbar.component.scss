@@ -1,0 +1,35 @@
+.toggle-button {
+  display: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+.list-view {
+  padding: 0;
+  .mat-mdc-list-item {
+    display: inline-block !important;
+    height: auto;
+    width: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .toggle-button {
+    display: block;
+  }
+  .list-view {
+    display: none;
+    position: fixed;
+    right: 0.5rem;
+    top: 4.5rem;
+    .mat-mdc-list-item {
+        padding:0.7rem 0.5rem;
+      display: block !important;
+      border-bottom: 1px solid #000;
+    }
+  }
+  .list-view-show{
+    display: block;
+  }
+}
