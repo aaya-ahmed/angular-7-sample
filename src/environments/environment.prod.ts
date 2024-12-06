@@ -1,3 +1,4 @@
-export const enviroment={
-    "baseUrl":"https://reqres.in/api/"
-}
+export const environment = {
+    production: true,
+    baseUrl:"https://reqres.in/api/"
+  };
