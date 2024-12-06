@@ -16,7 +16,6 @@ import { MaterialModule } from './modules/material/material.module';
 import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { ColorDirective } from './directive/color.directive';
-import { AppInterceptor } from './interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +40,6 @@ import { AppInterceptor } from './interceptor';
 
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AppInterceptor,
-      multi: true
-     }
-    
   ],
   bootstrap: [AppComponent]
 })
