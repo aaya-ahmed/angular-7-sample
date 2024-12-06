@@ -1,9 +1,5 @@
 <div class="card-container">
-  <p *ngIf="errorMessage; else data">
-    {{ errorMessage }}
-  </p>
-  <button mat-button (click)="goBack()">back</button>
+  <app-horizontal-card [card]="userCard" [goBackUrl]="'/users'"></app-horizontal-card>
 </div>
 <ng-template #data>
-  <app-horizontal-card [card]="userCard"></app-horizontal-card>
 </ng-template>

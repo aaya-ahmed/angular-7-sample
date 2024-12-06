@@ -3,6 +3,9 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    .mat-toolbar-single-row{
+        width: initial!important;
+    }
     >div{
         display: flex;
         align-items: center;

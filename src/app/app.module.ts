@@ -1,44 +1,52 @@
-import { AppTranslateService } from './app-translate.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule, MatButtonModule, MatIconModule, MatToolbarModule, MatListModule } from '@angular/material';
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
+import { HeaderComponent } from './layout/components/header/header.component';
+import { SearchComponent } from './layout/components/search/search.component';
+import { NavbarComponent } from './layout/components/navbar/navbar.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { LayoutComponent } from './layout/layout.component';
+import { VerticalCardComponent } from './components/vertical-card/vertical-card.component';
+import { MaterialModule } from './modules/material/material.module';
+import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { ColorDirective } from './directive/color.directive';
+import { AppInterceptor } from './interceptor';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SearchComponent,
+    NavbarComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    LayoutComponent,
+    VerticalCardComponent,
+    HorizontalCardComponent,
+    ProgressBarComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    }),
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatListModule
+    MaterialModule,
+    FormsModule,
+
   ],
   providers: [
-    AppTranslateService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppInterceptor,
+      multi: true
+     }
+    
   ],
   bootstrap: [AppComponent]
 })

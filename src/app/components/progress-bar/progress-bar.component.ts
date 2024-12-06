@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from 'src/app/services/shared/loading.service';
+import { LoadingService } from '../../services/shared/loading.service';
 
 @Component({
   selector: 'app-progress-bar',

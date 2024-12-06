@@ -21,6 +21,10 @@ export class AppComponent {
       'search',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/search.svg')
     )
+    iconRegistry.addSvgIcon(
+      'arrow-back',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/arrow_back.svg')
+    )
 
   }
 }

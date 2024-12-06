@@ -1,5 +1,5 @@
-<mat-card class="card" appearance="outlined" *ngIf="card" >
-    <mat-card-header [ngStyle]="{backgroundColor:'#'+((card.id??0)*477959).toString().substring(0,6)}">
+<mat-card class="card animated fadeInUp" appearance="outlined" *ngIf="card" >
+    <mat-card-header custom-backgroundColor={{card.id}}>
      <div mat-card-avatar class="header-image">
         <img mat-card-image [src]="card.image" [alt]="'photo-'+card.title">
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingService } from 'src/app/services/shared/loading.service';
+import { LoadingService } from '../../../services/shared/loading.service';
 
 @Component({
   selector: 'app-search',
@@ -14,7 +14,12 @@ export class SearchComponent {
 
   }
   onSearch(){
+    if(this.id){
+      this.router.navigateByUrl(`user/${+this.id}`)
+    }
+    else{
+      this.router.navigateByUrl(`users`)
+    }
     this.loadingService.loading.next(true);
-    this.router.navigateByUrl(`user/${+this.id}`)
   }
 }

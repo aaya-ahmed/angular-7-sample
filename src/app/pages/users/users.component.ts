@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { usersListResponce } from 'src/app/models/user';
-import { CachService } from 'src/app/services/cach/cach.service';
-import { LoadingService } from 'src/app/services/shared/loading.service';
-import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { usersListResponce } from '../../models/user';
+import { CachService } from '../../services/cach/cach.service';
+import { LoadingService } from '../../services/shared/loading.service';
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-users',
