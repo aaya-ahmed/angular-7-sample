@@ -28,7 +28,6 @@ export class UserDetailsComponent implements OnInit {
     private loadingService: LoadingService,
     private cacheService: CachService
   ) {
-    // Parse the user ID from the route
     this.id = parseInt(this.route.snapshot.paramMap.get('id') || '0', 10);
     if (isNaN(this.id)) {
       this.errorMessage = 'Invalid user ID';
